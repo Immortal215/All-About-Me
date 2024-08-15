@@ -1,12 +1,4 @@
-//
-//  ContentView.swift
-//  All About Me
-//
-//  Created by Sharul M. Shah on 8/15/24.
-//
-
 import SwiftUI
-
 struct ContentView: View {
     var body: some View {
         VStack {
@@ -22,3 +14,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
+
