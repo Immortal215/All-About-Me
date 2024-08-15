@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  All About Me
-//
-//  Created by Sharul M. Shah on 8/15/24.
-//
 
 import SwiftUI
 
