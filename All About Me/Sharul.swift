@@ -1,7 +1,8 @@
 import SwiftUI
 
-struct Sharul: View {
+struct ContentView: View {
     @State var screenWidth = UIScreen.main.bounds.width
+    @State var disClick = false 
     var body: some View {
         ScrollView {
             Text("All About Me")
@@ -21,16 +22,16 @@ struct Sharul: View {
                     )
                     .shadow(radius: 5)
                     .scaleEffect(0.9)
-
+                
                 HStack {
                     Image(systemName: "book.closed")
                     Text("Sophmore!")
                         .textCase(.uppercase)
                 }
-                .padding()
+                  .padding()
                 
             }
-            
+            .padding()
             
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
@@ -46,11 +47,12 @@ struct Sharul: View {
                     HStack {
                         Image(systemName: "drop")
                         Text("Swimmer")
+                            .font(.title3)
                         Image(systemName: "drop")
                     }
-                    DisclosureGroup("Teams") {
-                            Text("Sharks (13)")
-                            Text("Core Aquatics (14-15)")
+                    DisclosureGroup("Teams", isExpanded: $disClick) {
+                        Text("Sharks (13)")
+                        Text("Core Aquatics (14-15)")
                     }
                     .foregroundStyle(.black)
                     .fixedSize()
@@ -59,12 +61,11 @@ struct Sharul: View {
                 .padding()
                 
                 Image(systemName: "person")
-                    .offset(y:-5)
-
+                    .offset(y: disClick ? -5 : 0)
+                    
+                
             }
+        
         }
     }
-}
-#Preview {
-    ContentView()
 }
