@@ -11,6 +11,8 @@
 		B82A9A542C6E4582005C7205 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82A9A532C6E4582005C7205 /* ContentView.swift */; };
 		B82A9A562C6E4584005C7205 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82A9A552C6E4584005C7205 /* Assets.xcassets */; };
 		B82A9A592C6E4584005C7205 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B82A9A582C6E4584005C7205 /* Preview Assets.xcassets */; };
+		B8F9492A2C73873900C2297E /* Quincy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F949292C73873900C2297E /* Quincy.swift */; };
+		B8F9492C2C73873E00C2297E /* Sharul.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F9492B2C73873E00C2297E /* Sharul.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		B82A9A532C6E4582005C7205 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B82A9A552C6E4584005C7205 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B82A9A582C6E4584005C7205 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B8F949292C73873900C2297E /* Quincy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quincy.swift; sourceTree = "<group>"; };
+		B8F9492B2C73873E00C2297E /* Sharul.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sharul.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				B82A9A512C6E4582005C7205 /* All_About_MeApp.swift */,
 				B82A9A532C6E4582005C7205 /* ContentView.swift */,
+				B8F949292C73873900C2297E /* Quincy.swift */,
+				B8F9492B2C73873E00C2297E /* Sharul.swift */,
 				B82A9A552C6E4584005C7205 /* Assets.xcassets */,
 				B82A9A572C6E4584005C7205 /* Preview Content */,
 			);
@@ -138,6 +144,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B82A9A542C6E4582005C7205 /* ContentView.swift in Sources */,
+				B8F9492A2C73873900C2297E /* Quincy.swift in Sources */,
+				B8F9492C2C73873E00C2297E /* Sharul.swift in Sources */,
 				B82A9A522C6E4582005C7205 /* All_About_MeApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
