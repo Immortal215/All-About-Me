@@ -1,8 +1,15 @@
 import SwiftUI
 
 struct Quincy: View {
+    var color = "blue"
     
     var body: some View {
-        Text("a")
+        Button(action: {
+            
+        }, label: {
+            Text("Quincy Alex")
+                .foregroundColor(Color(color))
+        })
+        
     }
 }
