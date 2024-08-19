@@ -3,6 +3,12 @@ import SwiftUI
 struct Sharul: View {
     
     var body: some View {
-        Text("a")
+        ScrollView {
+            Text("All About Me")
+                .font(.largeTitle)
+            Spacer()
+            Text("Sharul Shah")
+            
+        }
     }
 }
