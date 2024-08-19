@@ -10,6 +10,7 @@ struct Sharul: View {
             Text("Sharul Shah")
                 .fontWeight(.black)
             
+            //sophmore
             ZStack {
                 RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(.white)
@@ -19,15 +20,16 @@ struct Sharul: View {
                         
                     )
                     .shadow(radius: 5)
-                
-                VStack {
-                    Text("Swimmer")
-                    Image(systemName: "drop")
+                    .scaleEffect(0.9)
+
+                HStack {
+                    Image(systemName: "book.closed")
+                    Text("Sophmore!")
+                        .textCase(.uppercase)
                 }
                 .padding()
                 
             }
-            .scaleEffect(0.9)
             
             
             ZStack {
@@ -40,12 +42,25 @@ struct Sharul: View {
                     )
                     .shadow(radius: 5)
                     .scaleEffect(0.9)
-                
                 VStack {
-                    Text("Loves Monkies")
-                    Image(systemName: "drop")
+                    HStack {
+                        Image(systemName: "drop")
+                        Text("Swimmer")
+                        Image(systemName: "drop")
+                    }
+                    DisclosureGroup("Teams") {
+                            Text("Sharks (13)")
+                            Text("Core Aquatics (14-15)")
+                    }
+                    .foregroundStyle(.black)
+                    .fixedSize()
+                    
                 }
                 .padding()
+                
+                Image(systemName: "person")
+                    .offset(y:-5)
+
             }
         }
     }
