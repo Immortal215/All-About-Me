@@ -1,9 +1,20 @@
 import SwiftUI
 
 struct Sharul: View {
-    @State var screenWidth = UIScreen.main.bounds.width
-    @State var disClick = false
-    @State var truths = ["I have a black belt" : true, "I have 2 sisters" : false, "I like to touch slime" : true]
+    @State private var screenWidth = UIScreen.main.bounds.width
+    @State private var disClick = false
+    @State private var truths = [
+        "I have a black belt": true,
+        "I have 2 sisters": false,
+        "I like to touch slime": true
+    ]
+    @State var clicked = [
+        "I have a black belt" : false,
+        "I have 2 sisters" : false, 
+        "I like to touch slime" : false
+    ]
+    @State private var selectedTruth: String? = nil
+    
     var body: some View {
         ScrollView {
             Text("All About Me")
@@ -12,21 +23,21 @@ struct Sharul: View {
             Text("Sharul Shah")
                 .fontWeight(.black)
             
-            //sophmore
+            // Sophomore
             ZStack {
                 Box()
                 
                 HStack {
                     Image(systemName: "book.closed")
-                    Text("Sophmore! | 15")
+                    Text("Sophomore! | 15")
                         .textCase(.uppercase)
                 }
-                  .padding()
+                .padding()
                 
             }
             .padding()
             
-            // swimmer
+            // Swimmer
             ZStack {
                 Box()
                 VStack {
@@ -49,31 +60,33 @@ struct Sharul: View {
                 
                 Image(systemName: "person")
                     .offset(y: disClick ? -15 : 0)
-                    
                 
             }
             
             ZStack {
-               Box()
+                Box()
                 VStack {
                     HStack {
                         Image(systemName: "book")
                         Text("Two Truths, 1 Lie!")
                             .textCase(.uppercase)
                         Image(systemName: "book")
-
+                        
                     }
-                      .padding()
+                    .padding()
                     
                     ScrollView {
-                        ForEach(Array(truths.keys), id: \.self) { index in
-                           // var indexer = truths[index]
-                            var clicker = false
+                        ForEach(Array(truths.keys), id: \.self) { key in
                             Button {
-                                clicker.toggle()
-                            } label : {
-                                Text("\(clicker ? truths[index] : index)")
-                                    .foregroundStyle(.black)
+                              clicked[key]!.toggle()
+                            } label: {
+                                if clicked[key] == false {
+                                    Text(key)
+                                } else {
+                                    Text("\(truths.values)")
+                                }
+                                
+                                    
                             }
                         }
                         
@@ -84,7 +97,7 @@ struct Sharul: View {
                 
             }
             .padding()
-        
+            
         }
     }
 }
@@ -96,7 +109,6 @@ struct Box: View {
             .overlay(
                 RoundedRectangle(cornerRadius: 15)
                     .stroke(.black, lineWidth: 2)
-                
             )
             .shadow(radius: 5)
             .scaleEffect(0.9)
