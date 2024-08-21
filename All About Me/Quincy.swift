@@ -7,8 +7,21 @@ struct Quincy: View {
     
     var body: some View {
         VStack {
-            Text("Quincy Alex")
-                .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+            ZStack {
+                RoundedRectangle(cornerRadius: 25)
+                    .frame(width: 300, height: 100)
+                    .foregroundColor(.blue)
+                    .shadow(radius: 15)
+                VStack {
+                    Text("All About")
+                        .font(.title)
+                    Text("Quincy Alex")
+                        .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                        .foregroundColor(.black)
+                }
+            }
+            Divider()
+                .frame(width: 1000, height: 10)
             Button(action: {
                 year += 1
                 if year > 12 {
@@ -26,6 +39,7 @@ struct Quincy: View {
                 Text("\(year)th grade\n\(textYear) Year")
                     .foregroundColor(.red)
             })
+            .padding()
             Text("I run track")
             Button(action: {
                 events += "100m, 200m"
@@ -35,7 +49,8 @@ struct Quincy: View {
             }, label: {
                 Text("Events: \(events)")
             })
+            
         }
-        
     }
 }
+    
