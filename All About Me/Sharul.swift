@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct Sharul: View {
-    @State private var screenWidth = UIScreen.main.bounds.width
-    @State private var disClick = false
-    @State private var truths = [
+    @State var screenWidth = UIScreen.main.bounds.width
+    @State var disClick = false
+    @State var truths = [
         "I have a black belt": true,
         "I have 2 sisters": false,
         "I like to touch slime": true
@@ -13,7 +13,6 @@ struct Sharul: View {
         "I have 2 sisters" : false, 
         "I like to touch slime" : false
     ]
-    @State private var selectedTruth: String? = nil
     
     var body: some View {
         ScrollView {
