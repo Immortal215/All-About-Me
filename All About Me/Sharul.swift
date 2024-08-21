@@ -69,6 +69,7 @@ struct Sharul: View {
                         Image(systemName: "book")
                         Text("Two Truths, 1 Lie!")
                             .textCase(.uppercase)
+                            .font(.title3)
                         Image(systemName: "book")
                         
                     }
@@ -81,8 +82,10 @@ struct Sharul: View {
                             } label: {
                                 if clicked[key] == false {
                                     Text(key)
+                                        .foregroundStyle(.black)
                                 } else {
-                                    Text("\(truths.values)")
+                                    Text("\(truths[key]!)")
+                    
                                 }
                                 
                                     
@@ -91,7 +94,8 @@ struct Sharul: View {
                         
                     }
                     .fixedSize()
-                    .padding()
+                    .offset(y: -20)
+                    //.padding()
                 }
                 
             }
