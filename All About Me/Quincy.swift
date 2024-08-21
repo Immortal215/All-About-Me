@@ -9,7 +9,7 @@ struct Quincy: View {
         VStack {
             ZStack {
                 RoundedRectangle(cornerRadius: 25)
-                    .frame(width: 300, height: 100)
+                    .frame(width: 200, height: 90)
                     .foregroundColor(.blue)
                     .shadow(radius: 15)
                 VStack {
@@ -20,12 +20,10 @@ struct Quincy: View {
                         .foregroundColor(.black)
                 }
             }
-            Divider()
-                .frame(width: 1000, height: 10)
             ZStack {
                 RoundedRectangle(cornerRadius: 25)
-                    .frame(width: 300, height: 100)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .frame(width: 150, height: 70)
+                    .foregroundColor(.orange)
                     .shadow(radius: 15)
                 Button(action: {
                     year += 1
@@ -45,17 +43,23 @@ struct Quincy: View {
                         .foregroundColor(.red)
                 })
             }
-            .padding()
-            Text("I run track")
-            Button(action: {
-                events += "100m, 200m"
-                if events == "100m, 200m100m, 200m" {
-                    events = ""
+            ZStack {
+                RoundedRectangle(cornerRadius: 25)
+                    .frame(width: 150, height: 70)
+                    .foregroundColor(.red)
+                    .shadow(radius: 15)
+                VStack {
+                    Text("I run track")
+                    Button(action: {
+                        events += "100m, 200m"
+                        if events == "100m, 200m100m, 200m" {
+                            events = ""
+                        }
+                    }, label: {
+                        Text("Events: \(events)")
+                    })
                 }
-            }, label: {
-                Text("Events: \(events)")
-            })
-            
+            }
         }
     }
 }
