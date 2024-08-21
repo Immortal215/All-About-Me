@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Sharul: View {
     @State var screenWidth = UIScreen.main.bounds.width
-    @State var disClick = false 
+    @State var disClick = false
     var body: some View {
         ScrollView {
             Text("All About Me")
@@ -13,15 +13,7 @@ struct Sharul: View {
             
             //sophmore
             ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(.white)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(.black, lineWidth: 2)
-                        
-                    )
-                    .shadow(radius: 5)
-                    .scaleEffect(0.9)
+                Box()
                 
                 HStack {
                     Image(systemName: "book.closed")
@@ -33,16 +25,9 @@ struct Sharul: View {
             }
             .padding()
             
+            // swimmer
             ZStack {
-                RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(.white)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 15)
-                            .stroke(.black, lineWidth: 2)
-                        
-                    )
-                    .shadow(radius: 5)
-                    .scaleEffect(0.9)
+                Box()
                 VStack {
                     HStack {
                         Image(systemName: "drop")
@@ -66,7 +51,39 @@ struct Sharul: View {
                     
                 
             }
+            
+            ZStack {
+               Box()
+                VStack{
+                    HStack {
+                        Image(systemName: "book")
+                        Text("Two Truths!")
+                            .textCase(.uppercase)
+                        Image(systemName: "book")
+
+                    }
+                    .padding()
+                    
+
+                }
+                
+            }
+            .padding()
         
         }
+    }
+}
+
+struct Box: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 15)
+            .foregroundColor(.white)
+            .overlay(
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(.black, lineWidth: 2)
+                
+            )
+            .shadow(radius: 5)
+            .scaleEffect(0.9)
     }
 }
