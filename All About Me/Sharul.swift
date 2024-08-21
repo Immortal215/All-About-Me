@@ -3,6 +3,7 @@ import SwiftUI
 struct Sharul: View {
     @State var screenWidth = UIScreen.main.bounds.width
     @State var disClick = false
+    @State var golfClick = false 
     @State var truths = [
         "I have a black belt": true,
         "I have 2 sisters": false,
@@ -18,7 +19,8 @@ struct Sharul: View {
         ScrollView {
             Text("All About Me")
                 .font(.largeTitle)
-            Spacer()
+                .padding()
+            
             Text("Sharul Shah")
                 .fontWeight(.black)
             
@@ -57,11 +59,37 @@ struct Sharul: View {
                 }
                 .padding()
                 
-                Image(systemName: "person")
+                Image(systemName: "figure.pool.swim")
                     .offset(y: disClick ? -15 : 0)
                 
             }
             
+            ZStack {
+                Box()
+                VStack {
+                    HStack {
+                        Text("Favorite Golfers")
+                            .font(.title3)
+                        
+                    }
+                    DisclosureGroup("Golfers", isExpanded: $golfClick) {
+                        Link("Tiger Woods", destination: URL(string:"https://tigerwoods.com")!)
+                        Link("Aarnav P Golf", destination: URL(string: "https://ijga.bluegolf.com/bluegolf/ijga23/event/ijga2315/contest/1/profile/apatel229/tresults.htm?")!)
+                        Text(" asdifojasiodfjasiodfjasiodfjaiosdjf")
+                            .foregroundStyle(.white)
+                    }
+                    
+                    .fixedSize()
+                    
+                }
+                .padding()
+                
+                Image(systemName: "figure.golf")
+                    .offset(y: golfClick ? -15 : 0)
+                
+            }
+            
+            // two truth 1 lie 
             ZStack {
                 Box()
                 VStack {
