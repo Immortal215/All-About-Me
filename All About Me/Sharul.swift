@@ -28,7 +28,7 @@ struct Sharul: View {
                 
                 HStack {
                     Image(systemName: "book.closed")
-                    Text("Sophomore! | 15")
+                    Text("Sophomore! | 15 yrs")
                         .textCase(.uppercase)
                 }
                 .padding()
@@ -51,7 +51,7 @@ struct Sharul: View {
                         Text("Core Aquatics (14-15)")
                         Text("Prospect Swim Team (14-15)")
                     }
-                    .foregroundStyle(.black)
+                
                     .fixedSize()
                     
                 }
@@ -82,7 +82,7 @@ struct Sharul: View {
                             } label: {
                                 if clicked[key] == false {
                                     Text(key)
-                                        .foregroundStyle(.black)
+                                        
                                 } else {
                                     Text("\(truths[key]!)")
                     
@@ -95,14 +95,16 @@ struct Sharul: View {
                     }
                     .fixedSize()
                     .offset(y: -20)
-                    //.padding()
+                    
                 }
                 
             }
             .padding()
             
         }
+            .foregroundStyle(.black)
     }
+        
 }
 
 struct Box: View {
