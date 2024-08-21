@@ -22,23 +22,29 @@ struct Quincy: View {
             }
             Divider()
                 .frame(width: 1000, height: 10)
-            Button(action: {
-                year += 1
-                if year > 12 {
-                    year = 10
-                    textYear = "Sophmore"
-                }
-                if year == 10 {
-                    textYear = "Sophmore"
-                } else if year == 11 {
-                    textYear = "Junior"
-                } else if year == 12 {
-                    textYear = "Senior"
-                }
-            }, label: {
-                Text("\(year)th grade\n\(textYear) Year")
-                    .foregroundColor(.red)
-            })
+            ZStack {
+                RoundedRectangle(cornerRadius: 25)
+                    .frame(width: 300, height: 100)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    .shadow(radius: 15)
+                Button(action: {
+                    year += 1
+                    if year > 12 {
+                        year = 10
+                        textYear = "Sophmore"
+                    }
+                    if year == 10 {
+                        textYear = "Sophmore"
+                    } else if year == 11 {
+                        textYear = "Junior"
+                    } else if year == 12 {
+                        textYear = "Senior"
+                    }
+                }, label: {
+                    Text("\(year)th grade\n\(textYear) Year")
+                        .foregroundColor(.red)
+                })
+            }
             .padding()
             Text("I run track")
             Button(action: {
