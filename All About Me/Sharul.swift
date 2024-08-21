@@ -53,6 +53,7 @@ struct Sharul: View {
                     DisclosureGroup("Teams", isExpanded: $disClick) {
                         Text("Sharks (13)")
                         Text("Core Aquatics (14-15)")
+                        Text("Prospect Swim Team (14-15)")
                     }
                     .foregroundStyle(.black)
                     .fixedSize()
@@ -61,7 +62,7 @@ struct Sharul: View {
                 .padding()
                 
                 Image(systemName: "person")
-                    .offset(y: disClick ? -5 : 0)
+                    .offset(y: disClick ? -15 : 0)
                     
                 
             }
