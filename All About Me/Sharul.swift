@@ -48,19 +48,20 @@ struct Sharul: View {
                             .font(.title3)
                         Image(systemName: "drop")
                     }
+                    .padding(.bottom, 10)
                     DisclosureGroup("Teams", isExpanded: $disClick) {
                         Text("Sharks (13)")
                         Text("Core Aquatics (14-15)")
                         Text("Prospect Swim Team (14-15)")
                     }
-                
+                    
                     .fixedSize()
                     
                 }
                 .padding()
                 
                 Image(systemName: "figure.pool.swim")
-                    .offset(y: disClick ? -15 : 0)
+                    .offset(y: disClick ? -10 : 5)
                 
             }
             
@@ -72,20 +73,31 @@ struct Sharul: View {
                             .font(.title3)
                         
                     }
+                    .padding(.bottom, 10)
                     DisclosureGroup("Golfers", isExpanded: $golfClick) {
-                        Link("Tiger Woods", destination: URL(string:"https://tigerwoods.com")!)
-                        Link("Aarnav P Golf", destination: URL(string: "https://ijga.bluegolf.com/bluegolf/ijga23/event/ijga2315/contest/1/profile/apatel229/tresults.htm?")!)
-                        Text(" asdifojasiodfjasiodfjasiodfjaiosdjf")
+                        Link(destination: URL(string:"https://tigerwoods.com")!)
+                        {
+                            Text("Tiger Woods")
+                                .underline()
+                        }
+                        Link(destination: URL(string: "https://ijga.bluegolf.com/bluegolf/ijga23/event/ijga2315/contest/1/profile/apatel229/tresults.htm?")!) {
+                            Text("Aarnav P Golf")
+                                .underline()
+                        }
+                        
+                        Text("okpokopkpokpokopkpokop")
                             .foregroundStyle(.white)
+                        
                     }
                     
-                    .fixedSize()
+                    .frame(maxWidth: 300)
+                    .fixedSize(horizontal: true, vertical: false)
                     
                 }
                 .padding()
                 
                 Image(systemName: "figure.golf")
-                    .offset(y: golfClick ? -15 : 0)
+                    .offset(y: golfClick ? -10 : 5)
                 
             }
             
@@ -106,17 +118,17 @@ struct Sharul: View {
                     ScrollView {
                         ForEach(Array(truths.keys), id: \.self) { key in
                             Button {
-                              clicked[key]!.toggle()
+                                clicked[key]!.toggle()
                             } label: {
                                 if clicked[key] == false {
                                     Text(key)
-                                        
+                                    
                                 } else {
                                     Text("\(truths[key]!)")
-                    
+                                    
                                 }
                                 
-                                    
+                                
                             }
                         }
                         
@@ -130,9 +142,9 @@ struct Sharul: View {
             .padding()
             
         }
-            .foregroundStyle(.black)
+        .foregroundStyle(.black)
     }
-        
+    
 }
 
 struct Box: View {
