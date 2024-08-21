@@ -4,6 +4,10 @@ struct Quincy: View {
     @State var year = 10
     @State var textYear = "Sophmore"
     @State var events = ""
+    @State var correct = false
+    @State var wrong = false
+    @State var correctAlert = false
+    @State var wrongAlert = false
     
     var body: some View {
         VStack {
@@ -22,7 +26,7 @@ struct Quincy: View {
             }
             ZStack {
                 RoundedRectangle(cornerRadius: 25)
-                    .frame(width: 150, height: 70)
+                    .frame(width: 175, height: 70)
                     .foregroundColor(.orange)
                     .shadow(radius: 15)
                 Button(action: {
@@ -45,8 +49,8 @@ struct Quincy: View {
             }
             ZStack {
                 RoundedRectangle(cornerRadius: 25)
-                    .frame(width: 150, height: 70)
-                    .foregroundColor(.red)
+                    .frame(width: 175, height: 70)
+                    .foregroundColor(.orange)
                     .shadow(radius: 15)
                 VStack {
                     Text("I run track")
@@ -60,6 +64,74 @@ struct Quincy: View {
                     })
                 }
             }
+            Divider()
+            .padding()
+            Text("Two Truths, 1 Lie")
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                .bold()
+                .underline()
+            Button(action: {
+                correct = true
+                wrong = true
+                correctAlert = true
+            }, label: {
+                Text("I have been to Ireland")
+                    .foregroundColor(.black)
+                    .background {
+                        RoundedRectangle(cornerRadius: 25)
+                            .frame(width: 175, height: 70)
+                            .foregroundColor(correct ? .green : .purple)
+                            .shadow(radius: 15)
+                    }
+            })
+            .alert("That was the lie!", isPresented: $correctAlert, actions: {
+                
+            })
+            .padding(25)
+            Button(action: {
+                wrong = true
+                correct = true
+                wrongAlert = true
+            }, label: {
+                Text("I have six pets")
+                    .foregroundColor(.black)
+                    .background {
+                        RoundedRectangle(cornerRadius: 25)
+                            .frame(width: 175, height: 70)
+                            .foregroundColor(wrong ? .red : .purple)
+                            .shadow(radius: 15)
+                    }
+            })
+            .alert("That wasn't the lie", isPresented: $wrongAlert, actions: {
+                
+            })
+            .padding(25)
+            Button(action: {
+                wrong = true
+                correct = true
+                wrongAlert = true
+            }, label: {
+                Text("I have been to three\ndifferent countries")
+                    .foregroundColor(.black)
+                    .background {
+                        RoundedRectangle(cornerRadius: 25)
+                            .frame(width: 175, height: 70)
+                            .foregroundColor(wrong ? .red : .purple)
+                            .shadow(radius: 15)
+                    }
+            })
+            .alert("That wasn't the lie", isPresented: $wrongAlert, actions: {
+                
+            })
+            .padding(25)
+            Button(action: {
+                correct = false
+                wrong = false
+                wrongAlert = false
+                correctAlert = false
+            }, label: {
+                Text("Reset")
+            })
         }
     }
 }
