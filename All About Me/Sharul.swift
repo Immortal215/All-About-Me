@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct ContentView: View {
+struct Sharul: View {
     @State var screenWidth = UIScreen.main.bounds.width
     @State var disClick = false 
     var body: some View {
