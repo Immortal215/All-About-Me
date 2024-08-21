@@ -3,6 +3,7 @@ import SwiftUI
 struct Sharul: View {
     @State var screenWidth = UIScreen.main.bounds.width
     @State var disClick = false
+    @State var truths = ["I have a black belt" : true, "I have 2 sisters" : false, "I like to touch slime" : true]
     var body: some View {
         ScrollView {
             Text("All About Me")
@@ -17,7 +18,7 @@ struct Sharul: View {
                 
                 HStack {
                     Image(systemName: "book.closed")
-                    Text("Sophmore!")
+                    Text("Sophmore! | 15")
                         .textCase(.uppercase)
                 }
                   .padding()
@@ -54,17 +55,31 @@ struct Sharul: View {
             
             ZStack {
                Box()
-                VStack{
+                VStack {
                     HStack {
                         Image(systemName: "book")
-                        Text("Two Truths!")
+                        Text("Two Truths, 1 Lie!")
                             .textCase(.uppercase)
                         Image(systemName: "book")
 
                     }
-                    .padding()
+                      .padding()
                     
-
+                    ScrollView {
+                        ForEach(Array(truths.keys), id: \.self) { index in
+                           // var indexer = truths[index]
+                            var clicker = false
+                            Button {
+                                clicker.toggle()
+                            } label : {
+                                Text("\(clicker ? truths[index] : index)")
+                                    .foregroundStyle(.black)
+                            }
+                        }
+                        
+                    }
+                    .fixedSize()
+                    .padding()
                 }
                 
             }
