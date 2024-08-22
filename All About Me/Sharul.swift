@@ -65,6 +65,7 @@ struct Sharul: View {
                 
             }
             
+            // golf 
             ZStack {
                 Box()
                 VStack {
@@ -120,16 +121,11 @@ struct Sharul: View {
                             Button {
                                 clicked[key]!.toggle()
                             } label: {
-                                if clicked[key] == false {
-                                    Text(key)
-                                    
-                                } else {
-                                    Text("\(truths[key]!)")
-                                    
-                                }
-                                
-                                
+                                    Text(clicked[key]! ? "\(truths[key]!)" : key)
+                                        .underline()
+                                        .animation(.snappy(duration: 0))
                             }
+                    
                         }
                         
                     }
