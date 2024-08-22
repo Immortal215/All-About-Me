@@ -9,11 +9,7 @@ struct Sharul: View {
         "I have 2 sisters": false,
         "I like to touch slime": true
     ]
-    @State var clicked = [
-        "I have a black belt" : false,
-        "I have 2 sisters" : false, 
-        "I like to touch slime" : false
-    ]
+    @State var clicked = [false, false, false]
     
     var body: some View {
         ScrollView {
@@ -117,17 +113,20 @@ struct Sharul: View {
                     .padding()
                     
                     ScrollView {
-                        ForEach(Array(truths.keys), id: \.self) { key in
+                        // really cool, enumerated makes the array have a tuple value (1 counting, 1 the item). 
+                        // .map makes it so as it goes through the array, it makes sure that it is an array and not a dictionary (able to be accesed at a given index)
+                        // ForEach needs an identifier for each item in the list and \.offset gives the index given by the enumerated as the indentifier
+                        ForEach(truths.keys.enumerated().map { $0 }, id: \.offset) { (index, key) in
+                            
                             Button {
-                                clicked[key]!.toggle()
+                                clicked[index].toggle()
                             } label: {
-                                    Text(clicked[key]! ? "\(truths[key]!)" : key)
-                                        .underline()
-                                        .animation(.snappy(duration: 0))
+                                Text(clicked[index] ? "\(truths[key]!)" : key)
+                                    .underline()
+                                    .animation(.snappy(duration: 0))
                             }
-                    
+                            
                         }
-                        
                     }
                     .fixedSize()
                     .offset(y: -20)
