@@ -86,7 +86,15 @@ struct Quincy: View {
                     }
             })
             .alert("That was the lie!", isPresented: $correctAlert, actions: {
-                
+                Button(action: {
+                    correct = false
+                    wrong = false
+                    wrongAlert = false
+                    correctAlert = false
+                    
+                }) {
+                    Text("Ok")
+                }
             })
             .padding(25)
             Button(action: {
@@ -104,7 +112,15 @@ struct Quincy: View {
                     }
             })
             .alert("That wasn't the lie", isPresented: $wrongAlert, actions: {
-                
+                Button(action: {
+                    correct = false
+                    wrong = false
+                    wrongAlert = false
+                    correctAlert = false
+                    
+                }) {
+                    Text("Ok")
+                }
             })
             .padding(25)
             Button(action: {
@@ -122,17 +138,25 @@ struct Quincy: View {
                     }
             })
             .alert("That wasn't the lie", isPresented: $wrongAlert, actions: {
-                
+                Button(action: {
+                    correct = false
+                    wrong = false
+                    wrongAlert = false
+                    correctAlert = false
+                    
+                }) {
+                    Text("Ok")
+                }
             })
             .padding(25)
-            Button(action: {
-                correct = false
-                wrong = false
-                wrongAlert = false
-                correctAlert = false
-            }, label: {
-                Text("Reset")
-            })
+//            Button(action: {
+//                correct = false
+//                wrong = false
+//                wrongAlert = false
+//                correctAlert = false
+//            }, label: {
+//                Text("Reset")
+//            })
         }
     }
 }
