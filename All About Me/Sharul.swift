@@ -15,7 +15,6 @@ struct Sharul: View {
         ScrollView {
             Text("All About Me")
                 .font(.largeTitle)
-                .padding()
             
             Text("Sharul Shah")
                 .fontWeight(.black)
@@ -57,11 +56,27 @@ struct Sharul: View {
                 .padding()
                 
                 Image(systemName: "figure.pool.swim")
-                    .offset(y: disClick ? -10 : 5)
+                    .offset(y: disClick ? -10 : 0)
                 
             }
             
-            // golf 
+            // batman
+            ZStack {
+                Box()
+                
+                HStack {
+                    Text("Batman =")
+                        .textCase(.uppercase)
+                    ForEach(0...4, id: \.self) {_ in
+                        Image(systemName: "star.fill")
+                    }
+                }
+                .padding()
+                
+            }
+            .padding()
+            
+            // golf
             ZStack {
                 Box()
                 VStack {
@@ -94,7 +109,7 @@ struct Sharul: View {
                 .padding()
                 
                 Image(systemName: "figure.golf")
-                    .offset(y: golfClick ? -10 : 5)
+                    .offset(y: golfClick ? -10 : 0)
                 
             }
             
