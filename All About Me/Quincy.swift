@@ -44,7 +44,7 @@ struct Quincy: View {
                     }
                 }, label: {
                     Text("\(year)th grade\n\(textYear) Year")
-                        .foregroundColor(.red)
+                        .foregroundColor(.black)
                 })
             }
             ZStack {
@@ -61,6 +61,7 @@ struct Quincy: View {
                         }
                     }, label: {
                         Text("Events: \(events)")
+                            .foregroundColor(.black)
                     })
                 }
             }
@@ -80,7 +81,7 @@ struct Quincy: View {
                     .background {
                         RoundedRectangle(cornerRadius: 25)
                             .frame(width: 175, height: 70)
-                            .foregroundColor(correct ? .green : .purple)
+                            .foregroundColor(correct ? .red : .purple)
                             .shadow(radius: 15)
                     }
             })
@@ -98,7 +99,7 @@ struct Quincy: View {
                     .background {
                         RoundedRectangle(cornerRadius: 25)
                             .frame(width: 175, height: 70)
-                            .foregroundColor(wrong ? .red : .purple)
+                            .foregroundColor(wrong ? .green : .purple)
                             .shadow(radius: 15)
                     }
             })
@@ -116,7 +117,7 @@ struct Quincy: View {
                     .background {
                         RoundedRectangle(cornerRadius: 25)
                             .frame(width: 175, height: 70)
-                            .foregroundColor(wrong ? .red : .purple)
+                            .foregroundColor(wrong ? .green : .purple)
                             .shadow(radius: 15)
                     }
             })
